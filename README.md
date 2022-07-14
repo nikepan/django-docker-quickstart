@@ -15,5 +15,5 @@ docker-compose up
 See http://yoursite.com/
 
 ## Options
-You can add SSL certificates in docker-compose and nginx/nginx.conf (uncomment and edit lines)
+You can add SSL certificates in docker-compose.yml and nginx/nginx.conf (uncomment and edit lines)
 
