@@ -19,7 +19,7 @@ docker-compose up  # or docker-copmpose up -d for daemonized start
 See http://youserver/  
 **Attention:** *Remove DEBUG=1 from docker-compose.yml before public start*  
 
-## Install on localhost
+## Run on localhost
 ```
 git clone git@github.com:nikepan/django-docker-quickstart.git  
 cd django-docker-quickstart
