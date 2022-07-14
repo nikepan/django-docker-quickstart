@@ -20,5 +20,5 @@ See http://youserver/
 You can add SSL certificates in docker-compose.yml and nginx/nginx.conf (uncomment and edit lines)
 
 ## Make your app
-Django app in the *app* directory. Make your features there.
+Django app in the **app** directory. Make your features there.
 
