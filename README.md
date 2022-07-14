@@ -10,6 +10,7 @@
 ```
 git clone git@github.com:nikepan/django-docker-quickstart.git  
 cd django-docker-quickstart  
+docker-compose build  # repeat it after changes in project
 docker-compose up  
 ```
 See http://yoursite.com/
