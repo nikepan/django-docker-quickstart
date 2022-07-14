@@ -7,7 +7,7 @@ Simple bootstrap django project with docker-compose for easy start on server
 
 
 ## Install
-- Clone and start:
+Clone and start:
 ```
 git clone git@github.com:nikepan/django-docker-quickstart.git  
 cd django-docker-quickstart  
