@@ -13,7 +13,7 @@ cd django-docker-quickstart
 docker-compose build  # repeat it after changes in project
 docker-compose up  
 ```
-See http://yoursite.com/
+See http://youserver/
 
 ## Options
 You can add SSL certificates in docker-compose.yml and nginx/nginx.conf (uncomment and edit lines)
