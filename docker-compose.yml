@@ -6,7 +6,7 @@ services:
       - ./nginx/:/etc/nginx/:ro
 #      - ./cert:/data/cert/:ro
     ports:
-      - "8077:80"
+      - "80:80"
 #      - "443:443"
     links:
       - app
