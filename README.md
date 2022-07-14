@@ -2,6 +2,8 @@
 Simple bootstrap django project with docker-compose for easy start on server
 
 ## Local Requirements
+- docker
+- docker-compose
 - Python 3.10
 - PostgreSQL
 
