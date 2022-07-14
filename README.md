@@ -1,4 +1,5 @@
 # Django docker quickstart
+Simple bootstrap django project with docker-compose for easy start on server
 
 ## Local Requirements
 - Python 3.10
