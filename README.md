@@ -8,7 +8,7 @@
 ## Install
 - Clone and start:
 ```
-git clone https://gitlab.com/nikepan/django-docker-quickstart.git  
+git clone git@github.com:nikepan/django-docker-quickstart.git  
 cd django-docker-quickstart  
 docker-compose up  
 ```
