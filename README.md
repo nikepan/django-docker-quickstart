@@ -1,7 +1,7 @@
 # Django docker quickstart
 
 ## Local Requirements
-- Python 3.9+
+- Python 3.10
 - PostgreSQL
 
 
