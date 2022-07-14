@@ -1,0 +1,39 @@
+{
+    "listeners": {
+      "*:8080": {
+          "pass": "routes"
+      }
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": [
+                    "/static/*"
+                ]
+            },
+            "action": {
+                "share": "/data/sdist/$uri"
+            }
+        },
+        {
+            "match": {
+                "uri": [
+                    "/*"
+                ]
+            },
+            "action": {
+                "pass": "applications/python"
+            }
+        }
+    ]
+    ,
+     "applications": {
+            "python": {
+                "type": "python 3.10",
+                "processes": 3,
+                "working_directory": "/data",
+                "path": "",
+                "module": "application.wsgi"
+            }
+        }
+}

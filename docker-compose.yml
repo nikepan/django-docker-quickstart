@@ -1,0 +1,64 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/:/etc/nginx/:ro
+#      - ./cert:/data/cert/:ro
+    ports:
+      - "8077:80"
+#      - "443:443"
+    links:
+      - app
+    restart: always
+  app:
+    build: .
+    restart: always
+    environment:
+      ENV: prod
+      DEBUG: 1
+      ALLOWED_HOSTS: "*"
+      DATABASE_HOST: db
+      DATABASE_NAME: app
+      DATABASE_USER: app
+      DATABASE_PASSWORD: app
+    ports:
+      - "80:8080"
+    links:
+      - db
+#      - redis
+  migrate:
+    build: .
+    entrypoint: ["python", "manage.py", "migrate"]
+    environment:
+      ENV: prod
+#       DEBUG: 1
+      ALLOWED_HOSTS: "*"
+      DATABASE_HOST: db
+      DATABASE_NAME: app
+      DATABASE_USER: app
+      DATABASE_PASSWORD: app
+    links:
+      - db
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+#  redis:
+#    image: redis
+#    restart: always
+#    command: --save 60 1 --loglevel warning
+#    volumes:
+#      - redis_data:/data
+
+
+volumes:
+  pg_data:
+    driver: local
+#  redis_data:
+#    driver: local
+
