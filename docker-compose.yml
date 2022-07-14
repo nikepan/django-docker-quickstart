@@ -22,8 +22,6 @@ services:
       DATABASE_NAME: app
       DATABASE_USER: app
       DATABASE_PASSWORD: app
-    ports:
-      - "80:8080"
     links:
       - db
 #      - redis

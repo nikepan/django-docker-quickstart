@@ -9,12 +9,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dummysecret123')
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS.extend(filter(None, os.environ.get('ALLOWED_HOSTS', '').split(','),))
 
-DEBUG = bool(int(os.environ.get('DEBUG', 0)))
-if not DEBUG:
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -115,4 +109,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = 'sdist/static/'
+
+
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+
 
