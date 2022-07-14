@@ -16,7 +16,7 @@ services:
     restart: always
     environment:
       ENV: prod
-      DEBUG: 1
+      DEBUG: 1  # remove this on prod
       ALLOWED_HOSTS: "*"
       DATABASE_HOST: db
       DATABASE_NAME: app

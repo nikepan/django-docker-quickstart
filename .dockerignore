@@ -1,3 +1,6 @@
 venv
 .venv
 .env
+
+*.pyc
+settings_local.py
