@@ -1,5 +1,6 @@
 # Django docker quickstart
-Simple bootstrap django project with docker-compose for easy start on server
+Simple bootstrap django project with docker-compose for easy start on server  
+Created for friends but may help you  
 
 ## Local Requirements
 - docker
