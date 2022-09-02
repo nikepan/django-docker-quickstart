@@ -4,6 +4,7 @@ RUN mkdir /data
 
 RUN apt-get update
 
+ENV PIPENV_VENV_IN_PROJECT=1
 #RUN apt-get -y install tzdata
 # ENV TZ="Europe/Moscow"
 
@@ -11,12 +12,12 @@ COPY unit.json /docker-entrypoint.d/
 
 WORKDIR /data
 
-COPY requirements.txt /data/
+COPY Pipfile* /data/
 
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install pipenv && pipenv sync --dev
 
 COPY app /data
-RUN python manage.py collectstatic --noinput
+RUN pipenv run python manage.py collectstatic --noinput
 
 WORKDIR /data
 

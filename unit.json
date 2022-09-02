@@ -30,6 +30,7 @@
      "applications": {
             "python": {
                 "type": "python 3.10",
+                "home": "/data/.venv/",
                 "processes": 3,
                 "working_directory": "/data",
                 "path": "",
