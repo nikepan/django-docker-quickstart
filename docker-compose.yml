@@ -1,16 +1,17 @@
-version: "3.3"
+version: "3.9"
 services:
-  nginx:
-    image: nginx
-    volumes:
-      - ./nginx/:/etc/nginx/:ro
-#      - ./cert:/data/cert/:ro
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
     ports:
       - "80:80"
-#      - "443:443"
-    links:
-      - app
-    restart: always
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+  
   app:
     build: .
     restart: always
@@ -55,6 +56,10 @@ services:
 
 
 volumes:
+  caddy_data:
+    driver: local
+  caddy_config:
+    driver: local
   pg_data:
     driver: local
 #  redis_data:

@@ -35,8 +35,8 @@ python app/manage.py migrate
 ./runserver  # or `DEBUG=1 python app/manage.py runserver` or `make serve`  
 ```
 
-## Options
-You can add SSL certificates in docker-compose.yml and nginx/nginx.conf (uncomment and edit lines)
+## Go to production
+Change domain and email in caddy/Caddyfile, and uncomment tls line   
 
 ## Make your app
 Django app in the **app** directory. Make your features there.
